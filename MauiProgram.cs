@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ToDoList.Interfaces;
 
 namespace ToDoList
 {
@@ -13,10 +14,12 @@ namespace ToDoList
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("fa-solid-900.ttf", "FontAwesomeSolid");
                 });
 
 #if DEBUG
     		builder.Logging.AddDebug();
+            builder.Services.AddScoped<ILoginViewModel, ILoginViewModel>();
 #endif
 
             return builder.Build();

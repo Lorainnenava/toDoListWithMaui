@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.Views.LoginPage"
-             Title="LoginPage">
-    <Grid RowDefinitions=".3*, .7*">
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             Title="Iniciar sesión">
+    <Grid RowDefinitions=".4*, .6*">
         <Image Grid.Row="0" Aspect="AspectFill" Source="dotnet_bot.png"/>
         <Grid BackgroundColor="Green" Opacity=".3"/>
         <Grid Grid.Row="1">
@@ -11,11 +13,35 @@
             <VerticalStackLayout Margin="30,0,30,0">
                 <Label FontAttributes="Bold" FontSize="Medium" Text="Bienvenidos!" TextColor="#2D2D2D"/>
                 <Label FontFamily="medium" Text="Iniciar sesión a continuación" TextColor="#A3A3A4"/>
-            </VerticalStackLayout>
 
-            <Grid Margin="0,30,0,0" ColumnDefinitions=".2*, .8*">
-                <RoundRectangle Background="Gray" CornerRadius="10" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40"/>
-            </Grid>
+                <!-- Input email -->
+                <Grid Margin="0,60,0,0" ColumnDefinitions=".2*, .8*">
+                    <RoundRectangle Background="#dce0e6" CornerRadius="10" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf0e0;" Size="40" Color="#4F3F9B"/>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1" Placeholder="Correo electronico" VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Input password -->
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*, .8*">
+                    <RoundRectangle Background="#dce0e6" CornerRadius="10" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf084;" Size="40" Color="#4F3F9B"/>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1" IsPassword="True" Placeholder="Contraseña" VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid RowDefinitions="auto, auto, auto">
+                    <Button Grid.Row="0" Margin="0,30,0,0" Text="Guardar" Background="#4F3F9B" HeightRequest="50" TextColor="white"/>
+                    <Label Grid.Row="1" Margin="0, 15, 0, 20" TextColor="blue" Text="Olvidaste tu contraseña?" VerticalOptions="Center" HorizontalOptions="Center" TextDecorations="Underline"/>
+                    <Button Grid.Row="2" Text="Crear una cuenta" BackgroundColor="white" TextColor="#4F3F9B" Command="{Binding NavigateToRegisterPageCommand}"/>
+                </Grid>
+            </VerticalStackLayout>
         </Grid>
     </Grid>
 </ContentPage>

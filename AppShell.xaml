@@ -3,13 +3,29 @@
     x:Class="ToDoList.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:page="clr-namespace:ToDoList.Views"
     xmlns:local="clr-namespace:ToDoList"
     Shell.FlyoutBehavior="Disabled"
     Title="ToDoList">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    
+    <TabBar>
+        <Tab Title="Iniciar sesion" Icon="dotnet_bot.png">
+            <ShellContent 
+        Title="Login" 
+        x:Name="qsItem"
+        ContentTemplate="{DataTemplate page:LoginPage}" 
+        Route="LoginPage"  />
+        </Tab>
+        <Tab Title="Inicio" Icon="dotnet_bot.png">
+            <ShellContent 
+        ContentTemplate="{DataTemplate page:HomePage}" 
+        Route="HomePage"     />
+        </Tab>
+        <Tab Title="Registrar usuario" Icon="dotnet_bot.png">
+            <ShellContent 
+        ContentTemplate="{DataTemplate page:RegisterUserPage}" 
+        Route="RegisterUserPage"     />
+        </Tab>
+    </TabBar>
 
 </Shell>
