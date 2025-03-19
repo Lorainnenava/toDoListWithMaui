@@ -1,6 +1,4 @@
-﻿using ToDoList.Views;
-
-namespace ToDoList
+﻿namespace ToDoList
 {
     public partial class AppShell : Shell
     {

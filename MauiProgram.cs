@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using ToDoList.Interfaces;
-
-namespace ToDoList
+﻿namespace ToDoList
 {
     public static class MauiProgram
     {
@@ -10,6 +7,7 @@ namespace ToDoList
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -18,8 +16,10 @@ namespace ToDoList
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
-            builder.Services.AddScoped<ILoginViewModel, ILoginViewModel>();
+            builder.Logging.AddDebug();
+            UtilsDependencyInjection.RegisterServices(builder.Services);
+            builder.Services.AddScoped<ILoginViewModel, LoginViewModel>();
+            builder.Services.AddScoped<LoginPage>();
 #endif
 
             return builder.Build();

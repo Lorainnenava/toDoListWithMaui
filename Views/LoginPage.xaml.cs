@@ -1,4 +1,4 @@
-using ToDoList.Interfaces;
+using ToDoList.Interfaces.ViewModel;
 
 namespace ToDoList.Views;
 
