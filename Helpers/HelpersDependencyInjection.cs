@@ -9,6 +9,7 @@
             services.AddScoped(typeof(IBaseHttpService<,>), typeof(BaseHttpService<,>));
             services.AddScoped<IConnectivityHelper, ConnectivityHelper>();
             services.AddScoped<IHandleTokenService, HandleTokenService>();
+            services.AddSingleton<ISettingsService, SettingsService>();
         }
     }
 }
