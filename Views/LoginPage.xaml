@@ -5,25 +5,25 @@
              Shell.TabBarIsVisible="False"
              Shell.NavBarIsVisible="False"
              Title="Iniciar sesión">
-    
+
     <!-- Vista login -->
     <Grid RowDefinitions=".4*, .6*">
         <Image Grid.Row="0" Aspect="AspectFill" Source="dotnet_bot.png"/>
-        <Grid BackgroundColor="Green" Opacity=".3"/>
-        
+        <Grid BackgroundColor="#259073" Opacity=".3"/>
+
         <!-- Contenido formulario -->
         <Grid Grid.Row="1">
-            <RoundRectangle Margin="-5,-30,-5,-2" CornerRadius="30,30,0,0" Fill="White"/>
+            <RoundRectangle Margin="-5,-30,-5,-2" CornerRadius="30,30,0,0" Fill="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}"/>
             <VerticalStackLayout Margin="30,0,30,0">
-                <Label FontAttributes="Bold" FontSize="Medium" Text="Bienvenidos!" TextColor="#2D2D2D"/>
-                <Label FontFamily="medium" Text="Iniciar sesión a continuación" TextColor="#A3A3A4"/>
+                <Label FontAttributes="Bold" FontSize="Medium" Text="Bienvenidos!"/>
+                <Label FontFamily="medium" Text="Iniciar sesión a continuación"/>
 
                 <!-- Input email -->
                 <Grid Margin="0,60,0,0" ColumnDefinitions=".2*, .8*">
-                    <RoundRectangle Background="#dce0e6" CornerRadius="10" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60"/>
+                    <RoundRectangle CornerRadius="10" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" Fill="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
                     <Image HorizontalOptions="Center">
                         <Image.Source>
-                            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf0e0;" Size="40" Color="#4F3F9B"/>
+                            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf0e0;" Size="40" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Primary}}"/>
                         </Image.Source>
                     </Image>
                     <Entry Grid.Column="1" Placeholder="Correo electronico" VerticalOptions="Center" Text="{Binding Email, Mode=TwoWay}"/>
@@ -31,10 +31,10 @@
 
                 <!-- Input password -->
                 <Grid Margin="0,30,0,0" ColumnDefinitions=".2*, .8*">
-                    <RoundRectangle Background="#dce0e6" CornerRadius="10" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60"/>
+                    <RoundRectangle CornerRadius="10" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" Fill="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
                     <Image HorizontalOptions="Center">
                         <Image.Source>
-                            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf084;" Size="40" Color="#4F3F9B"/>
+                            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf084;" Size="40" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Primary}}"/>
                         </Image.Source>
                     </Image>
                     <Entry Grid.Column="1" IsPassword="True" Placeholder="Contraseña" VerticalOptions="Center" Text="{Binding Password, Mode=TwoWay}"/>
@@ -42,9 +42,9 @@
 
                 <!-- Botones del login -->
                 <Grid RowDefinitions="auto, auto, auto">
-                    <Button Grid.Row="0" Margin="0,30,0,0" Text="Guardar" Background="#4F3F9B" HeightRequest="50" TextColor="white" Command="{Binding SaveCommand}"/>
-                    <Label Grid.Row="1" Margin="0, 15, 0, 20" TextColor="blue" Text="Olvidaste tu contraseña?" VerticalOptions="Center" HorizontalOptions="Center" TextDecorations="Underline"/>
-                    <Button Grid.Row="2" Text="Crear una cuenta" BackgroundColor="white" TextColor="#4F3F9B" Command="{Binding NavigateToRegisterPageCommand}"/>
+                    <Button Grid.Row="0" Margin="0,30,0,0" Text="Guardar"  HeightRequest="50" Command="{Binding SaveCommand}"/>
+                    <Label Grid.Row="1" Margin="0, 15, 0, 20" TextColor="{AppThemeBinding Light=Blue, Dark={StaticResource White}}" Text="Olvidaste tu contraseña?" VerticalOptions="Center" HorizontalOptions="Center" TextDecorations="Underline"/>
+                    <Button Grid.Row="2" Text="Crear una cuenta" Command="{Binding NavigateToRegisterPageCommand}"/>
                 </Grid>
             </VerticalStackLayout>
         </Grid>
