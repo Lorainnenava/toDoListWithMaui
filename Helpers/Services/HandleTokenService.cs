@@ -1,4 +1,5 @@
-﻿namespace ToDoList.Helpers.Services
+﻿using System.IdentityModel.Tokens.Jwt;
+namespace ToDoList.Helpers.Services
 {
     public class HandleTokenService : IHandleTokenService
     {
@@ -32,6 +33,19 @@
                 default:
                     throw new ArgumentOutOfRangeException(nameof(typeAction), "Acción no válida para el token.");
             }
+        }
+
+        public async Task<Dictionary<string, string>> GetClaimsFromToken()
+        {
+            string? token = await SecureStorage.GetAsync("access_token");
+
+            if (string.IsNullOrEmpty(token))
+                throw new Exception("No hay token almacenado.");
+
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            return jwtToken.Claims.ToDictionary(c => c.Type, c => c.Value);
         }
     }
 }

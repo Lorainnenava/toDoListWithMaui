@@ -4,5 +4,6 @@
     {
         Task<string> IsTokenExist();
         Task<(bool success, string? value)> HandleTokenAsync(TypeActionToken typeAction, string? token = null);
+        Task<Dictionary<string, string>> GetClaimsFromToken();
     }
 }

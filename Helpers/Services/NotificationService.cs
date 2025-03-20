@@ -1,4 +1,4 @@
-﻿namespace ToDoList.Utils.Services
+﻿namespace ToDoList.Helpers.Services
 {
     public class NotificationService : INotificationService
     {

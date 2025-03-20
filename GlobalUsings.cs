@@ -2,7 +2,7 @@
 global using CommunityToolkit.Maui.Core;
 global using ToDoList.Helpers.Enums;
 global using ToDoList.Helpers.Interface;
-global using ToDoList.Utils.Services;
+global using ToDoList.Helpers.Services;
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
 global using ToDoList.Views;
@@ -11,7 +11,6 @@ global using System.Text.Json;
 global using System.Text;
 global using System.Net;
 global using System.Net.Http.Headers;
-global using ToDoList.Helpers.Services;
 global using ToDoList.Interfaces.ViewModel;
 global using Microsoft.Extensions.Logging;
 global using CommunityToolkit.Maui;

@@ -15,11 +15,14 @@
                     fonts.AddFont("fa-solid-900.ttf", "FontAwesomeSolid");
                 });
 
+            HelpersDependencyInjection.RegisterHelperServices(builder.Services);
+
+            ViewModelDependencyInjection.RegisterViewModels(builder.Services);
+
+            ViewsDependencyInjection.RegisterPages(builder.Services);
+
 #if DEBUG
             builder.Logging.AddDebug();
-            UtilsDependencyInjection.RegisterServices(builder.Services);
-            builder.Services.AddScoped<ILoginViewModel, LoginViewModel>();
-            builder.Services.AddScoped<LoginPage>();
 #endif
 
             return builder.Build();

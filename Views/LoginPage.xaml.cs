@@ -1,5 +1,3 @@
-using ToDoList.Interfaces.ViewModel;
-
 namespace ToDoList.Views;
 
 public partial class LoginPage : ContentPage
