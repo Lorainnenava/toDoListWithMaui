@@ -18,6 +18,7 @@
                     if (string.IsNullOrWhiteSpace(token)) throw new Exception("Se debe proporcionar un token");
 
                     await SecureStorage.Default.SetAsync("access_token", token);
+                    await SecureStorage.Default.SetAsync("isLogged", "true");
 
                     return (true, null);
 
@@ -27,6 +28,9 @@
 
                 case TypeActionToken.Delete:
                     bool success = SecureStorage.Default.Remove("access_token");
+
+                    if(success) await SecureStorage.Default.SetAsync("isLogged", "false");
+
                     return (success, success ? null : "No se pudo eliminar el token.");
 
                 default:

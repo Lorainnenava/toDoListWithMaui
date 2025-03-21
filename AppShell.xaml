@@ -7,24 +7,22 @@
     xmlns:local="clr-namespace:ToDoList"
     Shell.FlyoutBehavior="Disabled"
     Title="ToDoList">
-    
-    <TabBar>
-        <Tab Title="Iniciar sesion" Icon="dotnet_bot.png">
-            <ShellContent 
-        Title="Login" 
-        x:Name="qsItem"
+
+    <ShellContent 
+        x:Name="LoginPage"
         ContentTemplate="{DataTemplate page:LoginPage}" 
-        Route="LoginPage"  />
-        </Tab>
+        Route="LoginPage" />
+
+    <ShellContent 
+        x:Name="RegisterUserPage"
+        ContentTemplate="{DataTemplate page:RegisterUserPage}" 
+        Route="RegisterUserPage" />
+
+    <TabBar x:Name="Dashboard">
         <Tab Title="Inicio" Icon="dotnet_bot.png">
             <ShellContent 
         ContentTemplate="{DataTemplate page:HomePage}" 
         Route="HomePage"     />
-        </Tab>
-        <Tab Title="Registrar usuario" Icon="dotnet_bot.png">
-            <ShellContent 
-        ContentTemplate="{DataTemplate page:RegisterUserPage}" 
-        Route="RegisterUserPage"     />
         </Tab>
     </TabBar>
 
