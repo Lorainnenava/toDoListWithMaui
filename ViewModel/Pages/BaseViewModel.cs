@@ -3,9 +3,6 @@
     public partial class BaseViewModel : ObservableObject, IBaseViewModel
     {
         [ObservableProperty]
-        string titlePage;
-
-        [ObservableProperty]
         bool isLoading;
 
         [ObservableProperty]

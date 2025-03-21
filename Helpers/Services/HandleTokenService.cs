@@ -1,5 +1,4 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-namespace ToDoList.Helpers.Services
+﻿namespace ToDoList.Helpers.Services
 {
     public class HandleTokenService : IHandleTokenService
     {

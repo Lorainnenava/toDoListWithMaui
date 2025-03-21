@@ -16,3 +16,6 @@ global using Microsoft.Extensions.Logging;
 global using CommunityToolkit.Maui;
 global using ToDoList.Helpers;
 global using ToDoList.ViewModel;
+global using ToDoList.ViewModel.Controls;
+global using ToDoList.Interfaces.Controls;
+global using System.IdentityModel.Tokens.Jwt;

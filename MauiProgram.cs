@@ -4,28 +4,40 @@
     {
         public static MauiApp CreateMauiApp()
         {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .UseMauiCommunityToolkit()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                    fonts.AddFont("fa-solid-900.ttf", "FontAwesomeSolid");
-                });
+            try
+            {
+                var builder = MauiApp.CreateBuilder();
+                builder
+                    .UseMauiApp<App>()
+                    .UseMauiCommunityToolkit()
+                    .ConfigureFonts(fonts =>
+                    {
+                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                        fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                        fonts.AddFont("fa-solid-900.ttf", "FontAwesomeSolid");
+                    });
 
-            HelpersDependencyInjection.RegisterHelperServices(builder.Services);
+                HelpersDependencyInjection.RegisterHelperServices(builder.Services);
 
-            ViewModelDependencyInjection.RegisterViewModels(builder.Services);
+                ViewModelDependencyInjection.RegisterViewModels(builder.Services);
 
-            ViewsDependencyInjection.RegisterPages(builder.Services);
+                ViewsDependencyInjection.RegisterPages(builder.Services);
 
 #if DEBUG
-            builder.Logging.AddDebug();
+                builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
+                var app = builder.Build();
+
+                ServiceHelper.Services = app.Services;
+
+                return app;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Ha surgido un error" + e.Message);
+            }
+
         }
     }
 }

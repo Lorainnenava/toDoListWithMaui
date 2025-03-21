@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.Views.RegisterUserPage"
+             xmlns:controls="clr-namespace:ToDoList.Controls"
              Title="RegisterUserPage">
+
+    <Shell.TitleView>
+        <controls:NavBarControl Title="{Binding Title}" GlyphIcon="{Binding GlyphIcon}"/>
+    </Shell.TitleView>
+
     <VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"

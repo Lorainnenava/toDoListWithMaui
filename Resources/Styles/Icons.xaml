@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <FontImageSource x:Key="UserIcon" FontFamily="FontAwesomeSolid" Glyph="&#xf007;" Size="20" Color="White"/>
+    <FontImageSource x:Key="SettingsIcon" FontFamily="FontAwesomeSolid" Glyph="&#xf013;" Size="20" Color="White"/>
+    <FontImageSource x:Key="HomeIcon" FontFamily="FontAwesomeSolid" Glyph="&#xf015;" Size="20" Color="White"/>
+    <FontImageSource x:Key="ThemeIconDark" FontFamily="FontAwesomeSolid" Glyph="&#xf186;" Size="20" Color="White"/>
+    <FontImageSource x:Key="ThemeIconLight" FontFamily="FontAwesomeSolid" Glyph="&#xf185;" Size="20" Color="White"/>
+
+</ResourceDictionary>
