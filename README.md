@@ -13,7 +13,7 @@ Este repositorio proporciona una estructura completa y bien organizada para desa
 8. [Contribuciones](#-contribuciones)
 9. [Próximas implementaciones](#-próximas-implementaciones) 
 10. [Licencia](#-licencia)  
-11. [Autor](#-autor)
+11. [Autor](#%EF%B8%8F-autor)
 
 ## 📂 Estructura del Proyecto
 
